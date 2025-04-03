@@ -1,7 +1,12 @@
 import Button from "../Button/Button";
 import s from "./Options.module.css";
 
-const Options = ({ feedback, updateFeedback, feedbackReset }) => {
+const Options = ({
+  feedback,
+  updateFeedback,
+  feedbackReset,
+  totalFeedback,
+}) => {
   const buttons = [...Object.keys(feedback), "reset"];
 
   return (
@@ -12,6 +17,7 @@ const Options = ({ feedback, updateFeedback, feedbackReset }) => {
           feedbackReset={feedbackReset}
           key={item}
           type={item}
+          totalFeedback={totalFeedback}
         />
       ))}
 

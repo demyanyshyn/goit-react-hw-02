@@ -1,4 +1,4 @@
-const PlaceName = ({ name, text }) => {
+const Description = ({ name, text }) => {
   return (
     <div>
       <h2>{name}</h2>
@@ -7,4 +7,4 @@ const PlaceName = ({ name, text }) => {
   );
 };
 
-export default PlaceName;
+export default Description;

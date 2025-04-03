@@ -1,6 +1,6 @@
 import "./App.css";
 import Feedback from "./components/Feedback/Feedback";
-import PlaceName from "./components/PlaceName/PlaceName";
+import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
 import { useState, useEffect } from "react";
 import Notification from "./components/Notification/Notification";
@@ -25,11 +25,11 @@ const App = () => {
   let { good, neutral, bad } = feedback;
 
   let totalFeedback = good + neutral + bad;
-  let averageGoodFeedback = Math.round((good / totalFeedback) * 100);
+  let percentageGoodFeedback = Math.round((good / totalFeedback) * 100);
 
   let statistic = {
     Total: totalFeedback,
-    Positive: averageGoodFeedback + "%",
+    Positive: percentageGoodFeedback + "%",
   };
   const feedbackReset = () => {
     setFeedback({
@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <>
-      <PlaceName
+      <Description
         name="Sip Happens Café"
         text="Please leave your feedback about our service by selecting one of the options below."
       />
@@ -56,6 +56,7 @@ const App = () => {
         updateFeedback={updateFeedback}
         feedbackReset={feedbackReset}
         feedback={feedback}
+        totalFeedback={totalFeedback}
       />
       {totalFeedback ? (
         <Feedback statistic={statistic} feedback={feedback} />
