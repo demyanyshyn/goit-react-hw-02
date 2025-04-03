@@ -20,13 +20,6 @@ const Options = ({
           totalFeedback={totalFeedback}
         />
       ))}
-
-      {/* <Button
-        key="reset"
-        type="reset"
-        updateFeedback={updateFeedback}
-        feedbackReset={feedbackReset}
-      /> */}
     </div>
   );
 };
