@@ -1,0 +1,28 @@
+.item {
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: beige;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px 1px;
+  font-size: 40px;
+  gap: 15px;
+}
+.itemImage {
+  margin-top: 20px;
+  max-width: 50%;
+  min-height: auto;
+}
+.itemName {
+}
+.online {
+  font-size: 30px;
+  color: green;
+}
+.ofline {
+  color: red;
+  font-size: 30px;
+}
