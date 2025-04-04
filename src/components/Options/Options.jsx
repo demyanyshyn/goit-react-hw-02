@@ -11,15 +11,25 @@ const Options = ({
 
   return (
     <div>
-      {buttons.map((item) => (
-        <Button
-          updateFeedback={updateFeedback}
-          feedbackReset={feedbackReset}
-          key={item}
-          type={item}
-          totalFeedback={totalFeedback}
-        />
-      ))}
+      {buttons.map((item) => {
+        const isReset = item === "reset";
+        const handleClick = () =>
+          isReset ? feedbackReset() : updateFeedback(item);
+
+        if (!totalFeedback && isReset) {
+          return;
+        } else {
+          return (
+            <Button
+              handleClick={handleClick}
+              key={item}
+              type={item}
+              totalFeedback={totalFeedback}
+              disabled={!totalFeedback && isReset}
+            />
+          );
+        }
+      })}
     </div>
   );
 };
